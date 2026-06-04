@@ -1,0 +1,16 @@
+[Unit]
+Description=Enaful Music Bot
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/path/to/EnafulMusicBot
+EnvironmentFile=/path/to/EnafulMusicBot/.env
+Environment="PATH=/root/.deno/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+ExecStart=/usr/bin/python3 /path/to/EnafulMusicBot/bot.py
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
